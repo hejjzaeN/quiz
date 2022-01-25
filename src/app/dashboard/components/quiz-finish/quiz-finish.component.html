@@ -1,0 +1,17 @@
+<article>
+    <div class="description">
+        <p>Поздравляем с прохождением тестирования!</p>
+        <div>
+            Ваш результат: {{ score }} %
+        </div>
+        <p>
+            Ваш статус: <span class="status">{{ status }}</span>
+        </p>
+    </div>
+
+    <div class="control_bar">
+        <div class="control_bar">
+            <input type="button" class="quiz_question_button" value="Начать заново" (click)="onClickStart()">
+        </div>
+    </div>
+</article>

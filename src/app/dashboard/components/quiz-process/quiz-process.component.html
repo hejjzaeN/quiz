@@ -1,0 +1,25 @@
+<article>
+    <div class="description">
+        Выберите правильный ответ
+    </div>
+    
+    <div class="question_block">
+        <p>{{ questions[questionNo].desc }}</p>
+        <form #form="ngForm" novalidate>
+            <ul class="quiz_question_ul">
+                <li class="quiz_question" *ngFor="let answer of questions[questionNo].answers; let i = index">
+                    <span style="display:none;">{{ i + 1 }}. </span>
+                    <label>
+                        <input class="quiz_question_input" (click)="onClickAnswer($event)" name="answer" autocomplete="off" type="radio" value="{{ answer.desc }}"> {{ answer.desc }}
+                    </label>
+                </li>
+            </ul>
+        </form>
+    </div>
+    
+    <div class="control_bar">
+        <input type="button" class="quiz_question_button" value="Назад" (click)="onClickPrev()">
+        &nbsp;
+        <input type="button" class="quiz_question_button" value="Следующий вопрос" (click)="onClickNext()" [disabled]="!allowNext">
+    </div>
+</article>
